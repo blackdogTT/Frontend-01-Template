@@ -1,0 +1,36 @@
+<script>
+    /* 
+        匹配所有Number直接量
+        整数 ^-?[1-9]\d*e\d+$
+        浮点数 ^-?[1-9]\d*.\d*e?\d+$
+        2进制 ^0[Bb][0-1]*$
+        8进制 ^0[Oo]?[0-7]*$
+        16进制 ^0[Xx]?[0-9A-F]*$
+        infinity ^-?infinity
+        NaN ^-?NaN
+        0: ^0$
+    */
+    const regNumber = /^-?[1-9]\d*e?\d+$|^0$|^-?[1-9]\d*.\d*e?\d+$|^0[Bb][0-1]*$|^0[Oo]?[0-7]*$|^0[Xx]?[0-9A-F]*$|^-?NaN|^-?infinity/g
+    /* 
+        UTF-8 Encoding函数
+    */
+    function encoding(str) {
+        const code = encodeURIComponent(str);
+        const arr = [];
+        for (var i = 0; i < code.length; i++) {
+            const c = code.charAt(i);
+            if (c === '%') {
+                const hex = code.charAt(i + 1) + code.charAt(i + 2);
+                const hexVal = parseInt(hex, 16);
+                arr.push(hexVal);
+                i += 2;
+            } else arr.push(c.charCodeAt(0));
+        }
+        return arr;
+    }
+    /* 
+        匹配所有字符串直接量和单双引号
+     */
+    const strNumber = /[\u0021-\u007E]{6,16}|[\x21-\x7E]{6,16}|(['"])(?:(?!\1).)*?\1/g
+
+</script>
