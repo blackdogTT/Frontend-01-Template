@@ -8,7 +8,7 @@
 
 #### 浏览器工作原理
 
-![image-20200610143103556](/Users/yuejunjie/Library/Application Support/typora-user-images/image-20200610143103556.png)
+![Image text](https://tva1.sinaimg.cn/large/007S8ZIlgy1gfn70rq5f1j31cm08zgmu.jpg)
 
 #### html的解析
 
