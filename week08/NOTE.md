@@ -52,4 +52,23 @@
 - ##### 正常流
 
   - ###### IFC:基线、行高问题（vertical-align最好只用top、middle、bottom）
+  
+  - ###### Bfc
+  
+- ##### float和clear（古代用法，排版用flex完全替代，文字环绕才使用）
 
+- ##### margin折叠（BFC合并，间距共用，满足最大值即可）
+
+  - ###### 同一个父BFC：只要两个子BFC合并
+
+  - ###### 不同父BFC：两个子FBC不合并
+
+  - ###### 特例：父BFC设置了overflow:visible，子BFC跟父BFC合并
+
+- ##### 重要概念
+
+  - ###### block-container：表示可以被放入 bfc
+
+  - ###### block-level：表示可以容纳 bfc
+
+  - ###### block-box：block-level + block-container
